@@ -5,6 +5,8 @@ public class SortExample {
         int[] numbers = {40, 7, 59, 4, 1};
 
         displayValues(numbers);
+        selectionSort(numbers);
+        displayValues(numbers);
 
     }//end main
 
@@ -16,7 +18,22 @@ public class SortExample {
 
             indexMin = i;
 
-        }
+            for(int j = i + 1; j < numbers.length; j++){
+
+                if(numbers[j] < numbers[indexMin]){
+
+                    indexMin = j;
+
+                }//end of if
+
+            }//end of inner for loop
+
+            //
+            int temp = numbers[i]; //temp stores the minimum index value
+            numbers[i] = numbers[indexMin];
+            numbers[indexMin] = temp;
+
+        }//end of outer for loop
 
     }//end of selection sort
 
